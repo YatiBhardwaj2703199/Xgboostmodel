@@ -9,11 +9,11 @@ wd = WarpDrive()
 df = wd.get_args("df")
 
 def arima_func(df):
-  model = sm.tsa.ARIMA(df.Unemployement_rate, order=(2,3,4)) 
+  model = sm.tsa.ARIMA(df.Unemployment_rate, order=(2,3,4)) 
   res_arima = model.fit()
   return res_arima
-input_variables = df.drop(columns='Unemployement_rate').columns.tolist()
-target_column = 'Unemployement_rate'
+input_variables = df.drop(columns='Unemployment_rate').columns.tolist()
+target_column = 'Unemployment_rate'
 
 # Create and fit ARIMA model
 arima_result = arima_func(df)
